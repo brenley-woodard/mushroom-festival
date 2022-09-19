@@ -74,8 +74,9 @@ addFriendForm.addEventListener('submit', (e) => {
 sayGoodbyeButton.addEventListener('click', () => {
     const stillHungry = [];
     for (const friend of friends) {
-        // > if the friend is not fully satisfied, push
-        // them into the stillHungry array
+        if (friend.satisfied < 3) {
+            stillHungry.push(friend);
+        }
     }
     friends = stillHungry;
     displayFriends();
@@ -102,8 +103,6 @@ function displayFriends() {
         const friendEl = renderFriend(friend);
 
         friendEl.addEventListener('click', () => {
-            // > handle the three possible outcomes:
-            // 1. No mushrooms, set a message to go hunt for more
             if (!mushrooms.length) {
                 message = "No mushrooms found! Keep on huntin'";
             } else if (friend.satisfied === 3) {
