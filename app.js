@@ -104,6 +104,10 @@ function displayFriends() {
                 message = "No mushrooms found! Keep on huntin'";
             } else if (friend.satisifed === 3) {
                 message = `${friend.name} is full. Pick a different friend...`;
+            } else {
+                const mushroom = mushroom.pop();
+                friend.satisfied++;
+                message = `${friend.name} enjoyed the ${mushroom.type}`;
             }
             displayMessage();
             displayMushrooms();
