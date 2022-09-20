@@ -102,6 +102,8 @@ function displayFriends() {
         friendEl.addEventListener('click', () => {
             if (!mushrooms.length) {
                 message = "No mushrooms found! Keep on huntin'";
+            } else if (friend.satisifed === 3) {
+                message = `${friend.name} is full. Pick a different friend...`;
             }
             displayMessage();
             displayMushrooms();
