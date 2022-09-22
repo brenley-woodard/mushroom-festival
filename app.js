@@ -108,7 +108,7 @@ function displayFriends() {
             } else if (friend.satisifed === 3) {
                 message = `${friend.name} is full. Pick a different friend...`;
             } else {
-                const mushroom = mushroom.pop();
+                const mushroom = mushrooms.pop();
                 friend.satisfied++;
                 message = `${friend.name} enjoyed the ${mushroom.type}`;
             }
